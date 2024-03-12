@@ -1,0 +1,20 @@
+public class ReplaceCharacterAtIndex {
+    public static void main(String[] args) {
+        String originalString = "welcome to datavalley intership program";
+        int indexToReplace = 31; 
+        char newCharacter = 'k'; 
+
+        String replacedString = replaceCharAtIndex(originalString, indexToReplace, newCharacter);
+        System.out.println("Original String: " + originalString);
+        System.out.println("Replaced String: " + replacedString);
+    }
+
+    public static String replaceCharAtIndex(String str, int index, char newChar) {
+        if (index < 0 || index >= str.length()) {
+            throw new IndexOutOfBoundsException("Index is out of bounds");
+        }
+        char[] charArray = str.toCharArray();
+        charArray[index] = newChar;
+        return new String(charArray);
+    }
+}
